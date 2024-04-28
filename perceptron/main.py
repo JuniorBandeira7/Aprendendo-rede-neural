@@ -7,6 +7,9 @@ class Perceptron:
     def __init__(self):
         pass
 
+    def sigmoid(self, x):
+        return 1 / (1 + np.exp(-x))
+
     def treinar(self):
         learningRate = 0.1
 
@@ -49,6 +52,7 @@ class Perceptron:
             
             print("previsao da partida ",numero," :",somaPonderada)
             print("target da partida ",numero," :",target)
+            print("aproximação: ", self.sigmoid(somaPonderada))
 
         
     def testar(self, ama, dano, danoRecebido, ward, cs, ouro):
